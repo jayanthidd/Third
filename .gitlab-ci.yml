@@ -1,0 +1,3 @@
+run_all_tests:
+  script:
+    - tests/run_all_tests.sh
