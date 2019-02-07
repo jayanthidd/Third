@@ -6,4 +6,4 @@ test -f index.html
 grep Webshop index.html
 
 # Erfolgmeldung
-echo "Tests in `basename $0` erfolgreich beendet."
+echo "Tests in $(basename $0) erfolgreich beendet."

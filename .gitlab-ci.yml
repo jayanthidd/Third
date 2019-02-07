@@ -1,3 +1,28 @@
-run_all_tests:
+stages:
+  - test
+  - deploy
+
+test:
+  stage: test
   script:
     - tests/run_all_tests.sh
+
+deploy_staging:
+  stage: deploy
+  script:
+    - .deploy/staging.sh
+  environment:
+    name: staging
+  only:
+    - master
+
+deploy_production:
+  stage: deploy
+  script:
+    - .deploy/production.sh
+  environment:
+    name: production
+  only:
+    - master
+  when: manual
+
