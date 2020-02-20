@@ -5,7 +5,8 @@ stages:
 test:
   stage: test
   script:
-    - tests/run_all_tests.sh
+    - tests/homepage_exists.sh
+    - tests/homepage_content.sh
 
 deploy_staging:
   stage: deploy
